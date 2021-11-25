@@ -10,7 +10,7 @@ class Controller {
       update: 'update/:slug',
       remove: 'remove/:slug'
     }
-    this.default()
+    this.runDefault()
   }
 
   getRoute(route) {
@@ -22,9 +22,10 @@ class Controller {
       ...this.routeUrl,
       ...newRoutes
     }
+    this.runDefault()
   }
 
-  default() {
+  runDefault() {
     this.app.route(this.getRoute('index')).get(async (request, response) => {
       try {
         const listAllData = await this.Model.index()

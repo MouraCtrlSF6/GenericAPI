@@ -5,7 +5,7 @@ const NOT_REQUIRABLE = ['id']
 
 class Model {
   constructor(tableName, mainIdentifier, notRequired = [...NOT_REQUIRABLE]) {
-    this.tableName = tableName
+    this.tableName = tableName.toLowerCase()
     this.mainIdentifier = mainIdentifier
     this.notRequired = notRequired.includes(...NOT_REQUIRABLE) 
       ? notRequired

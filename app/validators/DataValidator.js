@@ -48,25 +48,20 @@ class DataValidator {
   }
 
   async validateUpdateData(tableName, notRequired, payload) {
-    let validation = []
-    let validationName = 'updateData'
-
-    await Database.getColumns(tableName)
-      .then(tableColumns => {
-        const payloadKeys = Object.keys(payload)
-        notRequired = Array.isArray(notRequired) ? notRequired : [notRequired]
-        
-        validation = payloadKeys.filter(key => {
-          if(!String(payload[key]).length && !notRequired.includes(key)) return key
-          if(!tableColumns.includes(key)) return key
-        })
-      })
-      .catch(error => {
-        validation = error
-        validationName = 'ERROR'
+    try {
+      const tableColumns = await Database.getColumns(tableName)
+      const payloadKeys = Object.keys(payload)
+      notRequired = Array.isArray(notRequired) ? notRequired : [notRequired]
+  
+      const validation = payloadKeys.filter(key => {
+        if(!String(payload[key]).length && !notRequired.includes(key)) return key
+        if(!tableColumns.includes(key)) return key
       })
 
-    return this.validationResult(validationName, validation)
+      return this.validationResult('updateData', validation)
+    } catch(error) {
+      return this.validationResult('ERROR', error)
+    }
   }
 }
 
