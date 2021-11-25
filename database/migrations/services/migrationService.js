@@ -31,8 +31,10 @@ class MigrationService {
     return migrationExists
   }
 
-  altEvents(migrationName, action) {
-    return !this.historyExists() && migrationName === this.migrationHistoryName && action === 'RUN'
+  async altEvents(migrationName, action) {
+    const historyExists = await this.historyExists()
+    if(historyExists) return false
+    return migrationName === this.migrationHistoryName && action === 'RUN'
   }
 
   routinePicker(action, migrationExists, migrationName) {
@@ -48,7 +50,9 @@ class MigrationService {
   }
   
   async checkHistory(migrationName, action) {    
-    const migrationExists = await this.existsOnHistory(migrationName)
+    const migrationExists = await this.historyExists()
+      ? await this.existsOnHistory(migrationName)
+      : false
     
     return this.routinePicker(action, migrationExists, migrationName)
   }
@@ -75,7 +79,6 @@ class MigrationService {
     `
     const { rows: schemaRows } = await Database.raw(checkIfExists)
     const { exists } = schemaRows[0]
-
     return exists
   }
 }
