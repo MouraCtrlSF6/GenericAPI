@@ -12,8 +12,6 @@ const Controller = execController()
 class ExampleController extends Controller {
   constructor(app, modelName) {
     super(app, modelName)
-    this.app = app
-    this.modelName = modelName
 
     /*  
       Set your routes here as the following example:
