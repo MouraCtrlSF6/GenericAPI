@@ -11,7 +11,7 @@
       Run `npm install` in order to locally install all dependencies. 
     </p>
     <div class="ListHeader">
-      Available Features:
+      💫 Available Features: 💫
     </div>
     <ol>
       <li>Configuration of projecs's environment</li>
@@ -27,7 +27,7 @@
   <div class="Sections">
     <section class="Environment">
       <h3 class="SectionHeader">
-        1. Configuration of project's environment:
+        1. ⚙️ Configuration of project's environment: ⚙️
       </h3>
       <div class="SectionBody">
         <p>
@@ -96,7 +96,7 @@
     <hr>
     <section class="SQLQueries">
       <h3 class="SectionHeader">
-        2. Generation of SQL queries for database configuration
+        2. 📂 Generation of SQL queries for database configuration 📂
       </h3>
       <div class="SectionBody">
         <p>
@@ -177,7 +177,7 @@
             the migration name. It's recomended you use the same name 
             as the file. 
             <br>
-            IMPORTANT: Be sure to never repeat migration names!
+            ❗IMPORTANT❗: Be sure to never repeat migration names!
             <br>
             Check `@/app/start/examples/migrations.example`
             for more information.
@@ -188,7 +188,7 @@
     <hr>
     <section class="MigrationService">
       <h3 class="SectionHeader">
-        3. Migration service
+        3. 📦 Migration service 📦
       </h3>
       <div class="SectionBody">
         <p>
@@ -295,7 +295,7 @@
     <hr>
     <section class="ModelConfiguration">
       <h3 class="SectionHeader">
-        4. Automatic Model configuration
+        4. 💡 Automatic Model configuration 💡
       </h3>
       <div class="SectionBody">
         Using Generic API, you don't have to create a new
@@ -343,7 +343,7 @@
     </section>
     <section class="ControllerConfiguration">
       <h3 class="SectionHeader">
-        5. Easy Controller implemention
+        5. 🛠️ Easy Controller implemention 🛠️
       </h3>
       <div class="SectionBody">
         <p>
@@ -389,7 +389,7 @@
               as main identifier. If you don't, please change it or the application
               will be confused and won't work properly.
               <br>
-              IMPORTANT: As shown in default routes, when you want to specify url params,
+              ❗IMPORTANT❗: As shown in default routes, when you want to specify url params,
               you should use Express's default, which is :{var_name}
             </div>
           </li>
