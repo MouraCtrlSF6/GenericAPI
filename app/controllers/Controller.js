@@ -5,10 +5,10 @@ class Controller {
     this.mainIdentifier = this.Model.mainIdentifier
     this.routeUrl = {
       index: '/index',
-      show: 'show/:slug',
-      store: 'store',
-      update: 'update/:slug',
-      remove: 'remove/:slug'
+      show: '/show/:slug',
+      store: '/store',
+      update: '/update/:slug',
+      remove: '/remove/:slug'
     }
     this.runDefault()
   }

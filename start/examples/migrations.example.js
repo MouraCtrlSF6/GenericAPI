@@ -1,4 +1,4 @@
-//At app/database/migrations/migrationList, create a new file
+// At app/database/migrations/migrationList, create a new file
 
 require('dotenv').config()
 const Database = require(`../../infra/${process.env.DATABASE}/queries`)
