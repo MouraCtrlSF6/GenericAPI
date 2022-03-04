@@ -30,7 +30,7 @@
         You're able to set your environment variables by creating
         a .env file, were you're requested to inform the following 
         information:
-        <ol>
+        <ul>
           <li>
             HOST
             <div class="ItemInfo">
@@ -84,7 +84,7 @@
               Your database port.
             </div>
           </li>
-        </ol>
+        </ul>
       </div>
     </section>
   </div>
