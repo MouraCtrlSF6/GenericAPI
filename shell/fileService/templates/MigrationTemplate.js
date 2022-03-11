@@ -16,7 +16,7 @@ class MigrationTemplate {
     const className = this.formatClassName(migrationName)
 
     return `require('dotenv').config()
-const Database = require(\`../../infra/${process.env.DATABASE}/queries\`)
+const Database = require(\`../../infra/\${process.env.DATABASE}/queries\`)
 
 class ${className} {
   constructor() {
