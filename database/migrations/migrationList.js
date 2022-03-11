@@ -40,6 +40,6 @@ class FileLister {
   }
 }
 
-const path = `${__dirname}\\migrationList`
+const path = `${__dirname}/migrationList`
 module.exports = new FileLister(path).requireFilesOnDir()
 

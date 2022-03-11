@@ -1,10 +1,11 @@
-const MigrationRunner = require('./migrations/services/migrationRunner')
-const stdinInput = process.argv.slice(2)
+const FileService = require("./fileService.js")
+const [method, args] = process.argv.slice(2)
 
 async function exec(method, parameter) {
-  return await MigrationRunner[method](parameter) 
+  return await FileService[method](parameter) 
 }
-exec(stdinInput[0], stdinInput[1])
+
+exec(method, args)
   .then((manager) => {
     console.log()
     console.log(manager)
